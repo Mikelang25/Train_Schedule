@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Schedule</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <div class = "row">
+        <div class="col-md-2"></div>
+        <div class = "col-md-8 title-head text-center">
+            <span class="lbl-main">Train Schedule</span>
+        </div>
+    </div>
+
+    <div class = "row">
+        <div class="col-md-2"></div>
+        <div class = "col-md-8 table-content">
+            <div class="row">
+                <div class="lbl-table col-md-12">Current Train Schedule</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 table-data">
+                    <table class="table-trains text-center">
+                        <tr class = "table-labels">
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency (min)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                        <tr>
+                            <td>Grand Central</td>
+                            <td>Downtown</td>
+                            <td>30</td>
+                            <td>9:30</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>New Rochelle</td>
+                            <td>Stamford</td>
+                            <td>45</td>
+                            <td>10:30</td>
+                            <td>35</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "row">
+        <div class="col-md-2"></div>
+        <div class = "col-md-5 form-main">
+            <div class="row">
+                <div class="lbl-form col-md-12">Add Train</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="train-form">
+                        <span class="form-item">Train Name</span><br>
+                        <input class ="form-input" type="text" name="trainname"><br>
+                        <span class="form-item">Destination</span><br>
+                        <input class ="form-input" type="text" name="destination"><br>
+                        <span class="form-item">First Train Time (HH:mm - military time)</span><br>
+                        <input class ="form-input" type="text" name="traintime"><br>
+                        <span class="form-item">Frequency (min)</span><br>
+                        <input class ="form-input" type="text" name="frequency"><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script src="assets/javascript/app.js"></script>
+
+
+</html>

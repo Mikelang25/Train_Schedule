@@ -1,0 +1,54 @@
+
+td{
+    border-bottom:1pt solid black;
+}
+
+input{
+    width:100%;
+    margin-bottom:15px;
+}
+
+.title-head{
+    font-size: 48pt;
+    background-color: gray;
+    border-radius: 5px;
+    border:2pt solid black;
+    margin-bottom: 20px;
+}
+
+.table-content, .form-main{
+    border: 2pt solid black;
+    border-radius: 5px;
+}
+
+.form-main{
+    margin-top:20px;
+}
+
+.train-form{
+    margin-top:15px;
+}
+
+.lbl-table, .lbl-form{
+    background-color:gray;
+    padding:10px;
+    color:whitesmoke;
+}
+
+.table-trains{
+    width:100%;
+    margin-bottom: 20px;
+}
+
+.table-labels{
+    font-weight: bold;
+
+}
+
+.form-item{
+    font-weight: bold;
+}
+
+.form-input{
+    border-radius: 5px;
+}
