@@ -8,6 +8,7 @@ input{
     margin-bottom:15px;
 }
 
+
 .title-head{
     font-size: 48pt;
     background-color: gray;
@@ -51,4 +52,10 @@ input{
 
 .form-input{
     border-radius: 5px;
+}
+
+#btn-submit{
+    width:100px;
+    border-radius:5px; 
+    float: right;
 }
