@@ -35,14 +35,14 @@ $(document).ready(function() {
         var minutesToArrival = trFreq - timeApart;
         var nextTrain = moment().add(minutesToArrival,"minutes");
 
-        console.log(snapshot.key);
-
         newTrain = $("<tr>").append(
             $("<td>").text(trName),
             $("<td>").text(trDest),
             $("<td>").text(trFreq),
             $("<td>").text(nextTrain.format("hh:mm a")),
-            $("<td>").text(minutesToArrival).attr("id","arrival")
+            $("<td>").text(minutesToArrival).attr("id","arrival"),
+            $("<td>").html("<button class='delete'>Delete</button>"),
+            $("<td>").html("<button class='update'>Update</button>")
         );
         newTrain.attr("id",snapshot.key);
 
@@ -70,6 +70,17 @@ $(document).ready(function() {
 
         database.ref().push(newTrain);
     });
+
+    //find the parent element two levels up from the button and removes it from the table 
+    function removeTrain(){
+        console.log($(this).parent().parent().attr("id"));
+        var trainSelect = $(this).parent().parent().attr("id")
+        $("#"+trainSelect).remove();
+        database.ref().child(trainSelect).remove();
+    }
+
+
+    $(document).on("click", ".delete", removeTrain);
 
 
 });
