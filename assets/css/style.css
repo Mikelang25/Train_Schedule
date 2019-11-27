@@ -68,4 +68,9 @@ input{
     width:100px;
     border-radius:5px; 
     float: right;
+    font-weight: bold;
+}
+
+#btn-update{
+    display:hidden;
 }

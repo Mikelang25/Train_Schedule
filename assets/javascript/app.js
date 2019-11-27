@@ -3,6 +3,8 @@ var trainName;
 var destination;
 var initialTime;
 var frequency;
+var trainUpdating = false;
+var updateRecord;
 
 $(document).ready(function() {
 
@@ -36,11 +38,11 @@ $(document).ready(function() {
         var nextTrain = moment().add(minutesToArrival,"minutes");
 
         newTrain = $("<tr>").append(
-            $("<td>").text(trName),
-            $("<td>").text(trDest),
-            $("<td>").text(trFreq),
-            $("<td>").text(nextTrain.format("hh:mm a")),
-            $("<td>").text(minutesToArrival).attr("id","arrival"),
+            $("<td>").text(trName).addClass("train-name"),
+            $("<td>").text(trDest).addClass("train-destination"),
+            $("<td>").text(trFreq).addClass("frequency"),
+            $("<td>").text(nextTrain.format("hh:mm a")).addClass("nextTrain"),
+            $("<td>").text(minutesToArrival).addClass("arrival"),
             $("<td>").html("<button class='delete'>Delete</button>"),
             $("<td>").html("<button class='update'>Update</button>")
         );
@@ -56,6 +58,10 @@ $(document).ready(function() {
         
     $("#btn-submit").on("click", function() {
 
+        if(trainUpdating === true){
+            database.ref().child(updateRecord).remove();
+        } 
+
         trainName = $("#trainName").val().trim();
         destination = $("#destination").val().trim();
         trainTime = $("#trainTime").val().trim();
@@ -69,7 +75,10 @@ $(document).ready(function() {
         }
 
         database.ref().push(newTrain);
+        trainUpdating = false;
     });
+
+
 
     //find the parent element two levels up from the button and removes it from the table 
     function removeTrain(){
@@ -80,7 +89,19 @@ $(document).ready(function() {
     }
 
 
+    function updateTrain(){
+        trainUpdating = true;
+        $("#trainName").val($(this).parent().parent().children(".train-name").text());
+        $("#destination").val($(this).parent().parent().children(".train-destination").text());
+        $("#frequency").val($(this).parent().parent().children(".frequency").text());
+        $("#trainTime").val($(this).parent().parent().children(".nextTrain").text());
+        updateRecord = $(this).parent().parent().attr("id");
+        return updateRecord;
+    }
+
+
     $(document).on("click", ".delete", removeTrain);
+    $(document).on("click", ".update", updateTrain);
 
 
 });
