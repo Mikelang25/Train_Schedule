@@ -8,22 +8,25 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fc7e5aa30b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Frank+Ruhl+Libre|Share+Tech+Mono&display=swap" rel="stylesheet">
     
 </head>
 
 <body>
 
     <div class = "row">
-        <div class="col-md-2"></div>
-        <div class = "col-md-8 title-head text-center">
+        <div class="col-md-1"></div>
+        <div class = "col-md-9 title-head text-center">
+            <i class="fas fa-train"></i>
             <span class="lbl-main">Real Time Train Schedule</span>
         </div>
     </div>
 
     <div class = "row">
-        <div class="col-md-2"></div>
-        <div class = "col-md-8 table-content">
+        <div class="col-md-1"></div>
+        <div class = "col-md-7 table-content">
             <div class="row">
                 <div class="lbl-table col-md-12">Current Train Schedule</div>
             </div>
@@ -44,13 +47,13 @@
     </div>
 
     <div class = "row">
-        <div class="col-md-2"></div>
-        <div class = "col-md-4 form-main">
+        <div class="col-md-1"></div>
+        <div class = "col-md-7 form-main">
             <div class="row">
                 <div class="lbl-form col-md-12">Add Train</div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <form class="train-form">
                         <span class="form-item">Train Name</span><br>
                         <input id= "trainName"class ="form-input" type="text" name="trainname"><br>
@@ -62,6 +65,9 @@
                         <input id= "frequency" class ="form-input" type="text" name="frequency"><br>
                         <input id="btn-submit"type="submit" name="submit">
                     </form>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img class="img-train img-fluid" src="assets/images/train.jpg">
                 </div>
             </div>
         </div>

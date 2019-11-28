@@ -21,6 +21,7 @@ body{
     border:1pt solid black;
     margin-bottom: 20px;
     color:white;
+    font-family: 'Francois One', sans-serif;
 }
 
 .table-content, .form-main{
@@ -41,20 +42,23 @@ body{
     background-color:#251675;
     padding:10px;
     color:whitesmoke;
+    font-family: 'Francois One', sans-serif;
 }
 
 .table-trains{
     width:100%;
     margin-bottom: 20px;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 .table-labels{
     font-weight: bold;
-
+    font-family: 'Francois One', sans-serif;
 }
 
 .form-item{
     font-weight: bold;
+    font-family: 'Francois One', sans-serif;
 }
 
 .form-input{
@@ -68,6 +72,11 @@ body{
     font-weight: bold;
     line-height: 1.5;
     margin-left: -20px;
+}
+
+.img-train{
+    margin-top: 15px;
+    border:1pt solid black;
 }
 
 #btn-submit{
