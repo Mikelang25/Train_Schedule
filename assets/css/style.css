@@ -17,6 +17,7 @@ body{
 .title-head{
     font-size: 48pt;
     background-image: url("../images/header.jpg");
+    background-size:cover;
     border-radius: 5px;
     border:1pt solid black;
     margin-bottom: 20px;
