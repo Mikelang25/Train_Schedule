@@ -19,10 +19,17 @@ body{
     background-image: url("../images/header.jpg");
     background-size:cover;
     border-radius: 5px;
-    border:1pt solid black;
     margin-bottom: 20px;
-    color:white;
+    color:black;
     font-family: 'Francois One', sans-serif;
+}
+
+.lbl-main{
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.fa-train{
+   color:white
 }
 
 .table-content, .form-main{
