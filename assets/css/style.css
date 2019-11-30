@@ -87,6 +87,11 @@ body{
     border:1pt solid black;
 }
 
+.weather-main{
+    margin-left: 30px;
+    width:90%; 
+}
+
 #btn-submit{
     width:100px;
     border-radius:5px; 

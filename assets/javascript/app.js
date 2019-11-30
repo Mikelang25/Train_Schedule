@@ -99,7 +99,29 @@ $(document).ready(function() {
         return updateRecord;
     }
 
+    function locateWeather(){
 
+        var locationSelected = "Danbury"
+        var queryURL = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=HttSJfsjnPLSqcMJkfz97hZrKXcNXMHH&q=" + locationSelected;
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }) .then(function(response) {
+            console.log(response[0].Key);
+            var queryURL2 = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/" + response[0].Key + "?apikey=HttSJfsjnPLSqcMJkfz97hZrKXcNXMHH&details=true&metric=true";
+            $.ajax({
+                url: queryURL2,
+                method: "GET"
+            }) .then(function(weather) {
+                console.log(weather);
+            });
+        });
+
+
+    }
+
+    locateWeather();
     $(document).on("click", ".delete", removeTrain);
     $(document).on("click", ".update", updateTrain);
 
