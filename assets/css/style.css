@@ -10,18 +10,20 @@ input{
 }
 
 body{
-    background-image: url("../images/wild_oliva.png");
+    background-image: url("../images/map.jpg");
+    background-size: cover;
 }
 
 
 .title-head{
     font-size: 48pt;
-    background-image: url("../images/header.jpg");
-    background-size:cover;
+    background-image: url("../images/pink dust.png");
+    background-position: center;
     border-radius: 5px;
     margin-bottom: 20px;
     color:black;
-    font-family: 'Francois One', sans-serif;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    border: 1pt solid whitesmoke;
 }
 
 .lbl-main{
@@ -33,7 +35,6 @@ body{
 }
 
 .table-content, .form-main{
-    border: 2pt solid black;
     border-radius: 5px;
     background-image: url("../images/brillant.png");
 }
@@ -47,10 +48,11 @@ body{
 }
 
 .lbl-table, .lbl-form{
-    background-color:#251675;
+    background-image: url("../images/wild_oliva.png");
+    background-position: center;
     padding:10px;
     color:whitesmoke;
-    font-family: 'Francois One', sans-serif;
+    font-family: 'Vidaloka', serif;
 }
 
 .table-trains{
@@ -61,12 +63,12 @@ body{
 
 .table-labels{
     font-weight: bold;
-    font-family: 'Francois One', sans-serif;
+    font-family: 'Vidaloka', serif;
 }
 
 .form-item{
     font-weight: bold;
-    font-family: 'Francois One', sans-serif;
+    font-family: 'Vidaloka', serif;
 }
 
 .form-input{
@@ -98,17 +100,17 @@ body{
 }
 
 .lbl-weather, #weatherSelect{
-    font-family: 'Francois One', sans-serif;
+    font-family: 'Vidaloka', serif;
 }
 
 .weather{
-    font-family: 'Francois One', sans-serif;
+    font-family: 'Vidaloka', serif;
 }
 
 .weather-item{
     margin:10px; 
     color:black;
-    font-family: 'Francois One', sans-serif;
+    font-family: 'Vidaloka', serif;
 }
 
 .weather-head{

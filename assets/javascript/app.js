@@ -124,13 +124,18 @@ $(document).ready(function() {
                 weatherInfo.append(temp2);
                 $("#weather-info").append(weatherInfo);
                 var currentWeather = weather.Headline.Category;
-
+                var iconSelect; 
+                var iconColor;
                 switch(currentWeather){
 
                     case "snow/rain":
                         iconSelect = "<i class='fas fa-snowflake fa-7x' color='blue'></i>"
                         iconColor = "lightblue"
                     break;
+                    case "snow/ice":
+                            iconSelect = "<i class='fas fa-snowflake fa-7x' color='blue'></i>"
+                            iconColor = "lightblue"
+                        break;
                     case "cooler":
                         iconSelect = "<i class='fas fa-temperature-low fa-7x'></i>"
                         iconColor = "lightblue"
@@ -146,6 +151,10 @@ $(document).ready(function() {
                     case "thunderstorm":
                         iconSelect = "<i class='fas fa-poo-storm fa-7x'></i>"
                         iconColor = "orange"
+                    break;
+                    case "snow":
+                        iconSelect = "<i class='fas fa-snowflake fa-7x' color='blue'></i>"
+                        iconColor = "lightblue"
                     break;
 
                 }
