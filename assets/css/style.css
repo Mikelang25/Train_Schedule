@@ -17,25 +17,25 @@ body{
 
 .title-head{
     font-size: 48pt;
-    background-image: url("../images/pink dust.png");
+    background-image: url("../images/wide_rectangles.png");
     background-position: center;
     border-radius: 5px;
     margin-bottom: 20px;
-    color:black;
+    color:whitesmoke;
     font-family: 'Montserrat Subrayada', sans-serif;
-    border: 1pt solid whitesmoke;
+    border: 3pt solid black;
 }
 
 .lbl-main{
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    text-shadow: -5px 0 black, 0 1px black, -3px 0 black, 0 -1px black;
 }
 
 .fa-train{
-   color:white
+   color:black;
 }
 
 .table-content, .form-main{
-    border-radius: 5px;
+    border-radius: 15px;
     background-image: url("../images/brillant.png");
 }
 
