@@ -104,6 +104,10 @@ body{
     margin:10px; 
 }
 
+.weather-head{
+    padding-top:10px;
+}
+
 #btn-submit{
     width:100px;
     border-radius:5px; 
@@ -111,3 +115,13 @@ body{
     font-weight: bold;
 }
 
+#btn-find{
+    border-radius:5px;
+    width:100px;
+    font-size:10pt;
+    font-weight: bold;
+}
+
+#weatherSelect{
+    width:75%;
+}
