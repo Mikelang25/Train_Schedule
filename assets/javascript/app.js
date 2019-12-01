@@ -115,6 +115,13 @@ $(document).ready(function() {
                 method: "GET"
             }) .then(function(weather) {
                 console.log(weather);
+                var weatherInfo = $("<div>").addClass("weather")
+                var temp = $("<div>").text("High / Low: "  + (parseInt(weather.DailyForecasts[0].Temperature.Maximum.Value)*1.8 +32) + " F" + "       " + (parseInt(weather.DailyForecasts[0].Temperature.Minimum.Value)*1.8 +32)+" F").addClass("weather-item");
+                var temp2 = $("<div>").text(weather.Headline.Text).addClass("weather-item");
+                weatherInfo.append(temp);
+                weatherInfo.append(temp2);
+                console.log(weather.Headline.Text);
+                $("#weather-info").append(weatherInfo);
             });
         });
 

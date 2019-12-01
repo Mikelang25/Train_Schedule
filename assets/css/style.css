@@ -92,9 +92,22 @@ body{
     width:90%; 
 }
 
+.lbl-weather, #weatherSelect{
+    font-family: 'Francois One', sans-serif;
+}
+
+.weather{
+    font-family: 'Francois One', sans-serif;
+}
+
+.weather-item{
+    margin:10px; 
+}
+
 #btn-submit{
     width:100px;
     border-radius:5px; 
     float: right;
     font-weight: bold;
 }
+
