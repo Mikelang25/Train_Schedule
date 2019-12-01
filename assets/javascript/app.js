@@ -105,13 +105,13 @@ $(document).ready(function() {
         $("#weather-icon").empty();
 
         var locationSelected = $("#weatherSelect").val().trim();
-        var queryURL = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=HttSJfsjnPLSqcMJkfz97hZrKXcNXMHH&q=" + locationSelected;
+        var queryURL = "https://dataservice.accuweather.com/locations/v1/cities/search?apikey=HttSJfsjnPLSqcMJkfz97hZrKXcNXMHH&q=" + locationSelected;
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }) .then(function(response) {
-            var queryURL2 = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/" + response[0].Key + "?apikey=HttSJfsjnPLSqcMJkfz97hZrKXcNXMHH&details=true&metric=true";
+            var queryURL2 = "https://dataservice.accuweather.com/forecasts/v1/daily/1day/" + response[0].Key + "?apikey=HttSJfsjnPLSqcMJkfz97hZrKXcNXMHH&details=true&metric=true";
             $.ajax({
                 url: queryURL2,
                 method: "GET"
