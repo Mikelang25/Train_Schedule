@@ -102,6 +102,8 @@ body{
 
 .weather-item{
     margin:10px; 
+    color:black;
+    font-family: 'Francois One', sans-serif;
 }
 
 .weather-head{
@@ -130,3 +132,4 @@ body{
     padding-top:15px;
     color:orange;
 }
+

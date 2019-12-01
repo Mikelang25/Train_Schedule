@@ -120,13 +120,14 @@ $(document).ready(function() {
                 weatherInfo.append(temp);
                 weatherInfo.append(temp2);
                 $("#weather-info").append(weatherInfo);
-                var weatherIcon = $("<div>").html("<i class='fa fa-sun fa-5x'></i>");
+                var weatherIcon = $("<div>").html("<i class='fa fa-sun fa-7x'></i>");
                 $("#weather-icon").append(weatherIcon);
 
-                var sunRise = moment(weather.DailyForecasts[0].Sun.Rise).format("hh:mm a");
-                var sunSet = moment(weather.DailyForecasts[0].Sun.Set).format("hh:mm a")
-                console.log(sunRise);
-                console.log(sunSet);
+                var sunRise =$("<div>").text("Sun Rise: " + moment(weather.DailyForecasts[0].Sun.Rise).format("hh:mm a")).addClass("weather-item");
+                var sunSet = $("<div>").text("Sun Set: " + moment(weather.DailyForecasts[0].Sun.Set).format("hh:mm a")).addClass("weather-item");
+
+                $("#weather-info").append(sunRise);
+                $("#weather-info").append(sunSet);
 
             });
         });
