@@ -101,6 +101,9 @@ $(document).ready(function() {
 
     function locateWeather(){
 
+        $("#weather-info").empty();
+        $("#weather-icon").empty();
+
         var locationSelected = $("#weatherSelect").val().trim();
         var queryURL = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=HttSJfsjnPLSqcMJkfz97hZrKXcNXMHH&q=" + locationSelected;
 
@@ -115,12 +118,34 @@ $(document).ready(function() {
             }) .then(function(weather) {
                 console.log(weather);
                 var weatherInfo = $("<div>").addClass("weather")
-                var temp = $("<div>").text("High / Low: "  + (parseInt(weather.DailyForecasts[0].Temperature.Maximum.Value)*1.8 +32) + " F" + "       " + (parseInt(weather.DailyForecasts[0].Temperature.Minimum.Value)*1.8 +32)+" F").addClass("weather-item");
+                var temp = $("<div>").text("High / Low: "  + (parseInt(weather.DailyForecasts[0].Temperature.Maximum.Value)*1.8 +32).toFixed(0) + " F" + "       " + (parseInt(weather.DailyForecasts[0].Temperature.Minimum.Value)*1.8 +32).toFixed(0)+" F").addClass("weather-item");
                 var temp2 = $("<div>").text(weather.Headline.Text).addClass("weather-item");
                 weatherInfo.append(temp);
                 weatherInfo.append(temp2);
                 $("#weather-info").append(weatherInfo);
-                var weatherIcon = $("<div>").html("<i class='fa fa-sun fa-7x'></i>");
+                var currentWeather = weather.Headline.Category;
+
+                switch(currentWeather){
+
+                    case "snow/rain":
+                        iconSelect = "<i class='fas fa-snowflake fa-7x' color='blue'></i>"
+                    break;
+                    case "cooler":
+                        iconSelect = "<i class='fas fa-temperature-low fa-7x'></i>"
+                    break;
+                    case "rain":
+                        iconSelect = "<i class='fas fa-cloud-rain fa-7x'></i>"
+                    break;
+                    case "":
+                        iconSelect = "<i class='fas fa-sun fa-7x'></i>"
+                    break;
+                    case "thunderstorm":
+                        iconSelect = "<i class='fas fa-poo-storm fa-7x'></i>"
+                    break;
+
+                }
+
+                var weatherIcon = $("<div>").html(iconSelect).addClass("weather-icon-sun");
                 $("#weather-icon").append(weatherIcon);
 
                 var sunRise =$("<div>").text("Sun Rise: " + moment(weather.DailyForecasts[0].Sun.Rise).format("hh:mm a")).addClass("weather-item");
@@ -136,6 +161,7 @@ $(document).ready(function() {
     }
 
     locateWeather();
+    $(document).on("click","#btn-find",locateWeather);
     $(document).on("click", ".delete", removeTrain);
     $(document).on("click", ".update", updateTrain);
 

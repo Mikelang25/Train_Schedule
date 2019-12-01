@@ -92,6 +92,11 @@ body{
     width:90%; 
 }
 
+.lbl-weather-main{
+    font-size: 16pt;
+    font-family: 'Francois One', sans-serif;
+}
+
 .lbl-weather, #weatherSelect{
     font-family: 'Francois One', sans-serif;
 }
@@ -128,7 +133,7 @@ body{
     width:75%;
 }
 
-#weather-icon{
+.weather-icon-sun{
     padding-top:15px;
     color:orange;
 }
