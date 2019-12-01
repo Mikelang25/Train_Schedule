@@ -129,23 +129,28 @@ $(document).ready(function() {
 
                     case "snow/rain":
                         iconSelect = "<i class='fas fa-snowflake fa-7x' color='blue'></i>"
+                        iconColor = "lightblue"
                     break;
                     case "cooler":
                         iconSelect = "<i class='fas fa-temperature-low fa-7x'></i>"
+                        iconColor = "lightblue"
                     break;
                     case "rain":
                         iconSelect = "<i class='fas fa-cloud-rain fa-7x'></i>"
+                        iconColor = "grey"
                     break;
                     case "":
                         iconSelect = "<i class='fas fa-sun fa-7x'></i>"
+                        iconColor = "orange"
                     break;
                     case "thunderstorm":
                         iconSelect = "<i class='fas fa-poo-storm fa-7x'></i>"
+                        iconColor = "orange"
                     break;
 
                 }
 
-                var weatherIcon = $("<div>").html(iconSelect).addClass("weather-icon-sun");
+                var weatherIcon = $("<div>").html(iconSelect).addClass("weather-icon-sun").css("color",iconColor);
                 $("#weather-icon").append(weatherIcon);
 
                 var sunRise =$("<div>").text("Sun Rise: " + moment(weather.DailyForecasts[0].Sun.Rise).format("hh:mm a")).addClass("weather-item");
