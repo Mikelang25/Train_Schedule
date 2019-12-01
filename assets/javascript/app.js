@@ -101,14 +101,13 @@ $(document).ready(function() {
 
     function locateWeather(){
 
-        var locationSelected = "Danbury"
+        var locationSelected = $("#weatherSelect").val().trim();
         var queryURL = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=HttSJfsjnPLSqcMJkfz97hZrKXcNXMHH&q=" + locationSelected;
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }) .then(function(response) {
-            console.log(response[0].Key);
             var queryURL2 = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/" + response[0].Key + "?apikey=HttSJfsjnPLSqcMJkfz97hZrKXcNXMHH&details=true&metric=true";
             $.ajax({
                 url: queryURL2,
@@ -120,8 +119,15 @@ $(document).ready(function() {
                 var temp2 = $("<div>").text(weather.Headline.Text).addClass("weather-item");
                 weatherInfo.append(temp);
                 weatherInfo.append(temp2);
-                console.log(weather.Headline.Text);
                 $("#weather-info").append(weatherInfo);
+                var weatherIcon = $("<div>").html("<i class='fa fa-sun fa-5x'></i>");
+                $("#weather-icon").append(weatherIcon);
+
+                var sunRise = moment(weather.DailyForecasts[0].Sun.Rise).format("hh:mm a");
+                var sunSet = moment(weather.DailyForecasts[0].Sun.Set).format("hh:mm a")
+                console.log(sunRise);
+                console.log(sunSet);
+
             });
         });
 

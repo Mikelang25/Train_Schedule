@@ -125,3 +125,8 @@ body{
 #weatherSelect{
     width:75%;
 }
+
+#weather-icon{
+    padding-top:15px;
+    color:orange;
+}
