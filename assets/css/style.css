@@ -95,6 +95,7 @@ body{
 }
 
 .lbl-weather-main{
+    font-weight: bold;
     font-size: 16pt;
     font-family: 'Francois One', sans-serif;
 }
